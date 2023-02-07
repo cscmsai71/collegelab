@@ -1,0 +1,16 @@
+import pandas as dp
+data={'rollno':[1,2,3,4,5],
+      'name':["anu","manu","paru","reenu","sreenu"],
+      'physics':[70,75,80,65,89],
+      'chemistry':[75,78,80,67,79],
+      'maths':[80,65,59,90,93],
+      'english':[99,93,85,87,80]}
+df=dp.DataFrame(data)
+print(df)
+print("-------------------------\n")
+df=df.eval("total=physics+chemistry+maths+english")
+print(df)
+print("---------------------------\n")
+max_mark=df['total'].max()
+print("the highest score:",max_mark)
+print(df.loc[df['total']==max_mark])
